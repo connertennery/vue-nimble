@@ -55,10 +55,10 @@ export default {
 				//Could operate in reverse, going from highest index to lowest, but that may come with its own challenges.
 				//And if someone wants dollar signs in their source text, that will get overriden as well.
 				//Maybe find all of the indexes and cut them out then replace instead of a full replace all?
-				items.forEach((item, index) => {
+				items.reverse().forEach((item, index) => {
 					currentLine = currentLine.replace(
 						new RegExp(
-							`\$${index + 1}`.replace(
+							`\$${items.length - index}`.replace(
 								/[.*+?^${}()|[\]\\]/g,
 								"\\$&"
 							),
