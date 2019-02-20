@@ -2,11 +2,11 @@
 	<div class="NText">
 		<div class="source">
 			<div class="sectionTitle">Source</div>
-			<textarea v-model="sourceText" @keyup="sourceText_keyUp"/>
+			<textarea v-model="sourceText"/>
 		</div>
 		<div class="pattern">
 			<div class="sectionTitle">Pattern</div>
-			<textarea v-model="patternText" @keyup="patternText_keyUp"/>
+			<textarea v-model="patternText"/>
 			<div class="parsingConfig">
 				Column Separater
 				<input v-model="columnSeparater">
@@ -30,7 +30,6 @@ export default {
 		return {
 			sourceText: "",
 			patternText: "",
-			outputText: "",
 			columnSeparater: ",",
 			rowSeparater: "\\n"
 		};
@@ -41,20 +40,8 @@ export default {
 		},
 		_columnSeparater: function() {
 			return this.replaceNormalWithLiterals(this.columnSeparater);
-		}
-	},
-	methods: {
-		replaceNormalWithLiterals(s) {
-			return s.replace("\\n", "\n").replace("\\t", "\t");
 		},
-		sourceText_keyUp() {
-			this.stampOutput();
-		},
-		patternText_keyUp() {
-			this.stampOutput();
-		},
-		stampOutput() {
-			this.outputText = "";
+		outputText() {
 			let rows = this.sourceText.split(this._rowSeparater);
 
 			var output = "";
@@ -83,7 +70,12 @@ export default {
 				output += currentLine + this._rowSeparater;
 			});
 
-			this.outputText = output;
+			return output;
+		}
+	},
+	methods: {
+		replaceNormalWithLiterals(s) {
+			return s.replace("\\n", "\n").replace("\\t", "\t");
 		}
 	}
 };
