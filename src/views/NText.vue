@@ -42,10 +42,9 @@ export default {
 			return this.replaceNormalWithLiterals(this.columnSeparater);
 		},
 		outputText() {
-			let rows = this.sourceText.split(this._rowSeparater);
-
 			var output = "";
 
+			let rows = this.sourceText.split(this._rowSeparater);
 			rows.forEach(row => {
 				var s = row;
 				let currentLine = this.patternText;
