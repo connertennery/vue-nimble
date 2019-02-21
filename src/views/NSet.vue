@@ -125,7 +125,7 @@ export default {
 	border-radius: 10px;
 }
 .NSet textarea {
-	min-height: 200px;
+	min-height: 400px;
 	outline: none;
 	border-radius: 10px;
 	resize: none;
@@ -155,6 +155,10 @@ export default {
 	display: flex;
 	color: white;
 	margin-top: 8px;
+	background: rgb(130, 70, 190);
+	border-radius: 8px;
+	padding: 8px;
+	margin-right: auto;
 }
 .configInput {
 	margin-left: 8px;
