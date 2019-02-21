@@ -70,10 +70,38 @@ export default {
 	},
 	computed: {
 		_seperator: function() {
-			return this.replaceNormalWithLiterals(this.rowSeparater);
+			return this.replaceNormalWithLiterals(this.separator);
 		},
 		outputText() {
 			var output = "";
+			let leftItems = this.leftSet.split(this._seperator);
+			let rightItems = this.rightSet.split(this._seperator);
+
+			switch (this.comparisonType) {
+				case "leftOnly":
+					output = this.leftSet;
+					break;
+				case "rightOnly":
+					output = this.rightSet;
+					break;
+				case "intersect":
+					output = Array.from(
+						new Set(leftItems.filter(l => rightItems.includes(l)))
+					).join(this._seperator);
+					break;
+				case "union":
+					output = Array.from(
+						new Set(leftItems.concat(rightItems))
+					).join(this._seperator);
+					break;
+				case "xor":
+					let arr = leftItems.concat(rightItems);
+					arr = arr.filter(
+						x => !(leftItems.includes(x) && rightItems.includes(x))
+					);
+					output = arr.join(this._seperator);
+					break;
+			}
 
 			return output;
 		}
