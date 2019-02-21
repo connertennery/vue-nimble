@@ -92,7 +92,7 @@ export default {
 }
 .NText textarea {
 	width: 98%;
-	min-height: 400px;
+	min-height: 300px;
 	outline: none;
 	border-radius: 10px;
 	padding: 10px;
