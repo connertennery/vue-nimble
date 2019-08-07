@@ -1,5 +1,8 @@
 # vue-nimble
 
+I just wanted to emulate a product I use often called NimbleText and NimbleSet, created by Leon Bambrick.
+It only copies a few basic, free features, including automatic generation on each key press.
+
 ## Project setup
 ```
 npm install
@@ -9,21 +12,3 @@ npm install
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
