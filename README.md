@@ -4,9 +4,9 @@ I just wanted to emulate a product I use often called NimbleText and NimbleSet, 
 It only copies a few basic, free features, including automatic generation on each key press.
 
 NText
-![NText](https://i.imgur.com/6YLGS3p.png)
+![NText](https://i.imgur.com/T5AtD4r.png)
 NSet
-![NSet](https://i.imgur.com/rP3A2lj.png)
+![NSet](https://i.imgur.com/5g864ma.png)
 
 ## Project setup
 ```
